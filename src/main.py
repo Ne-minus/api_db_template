@@ -1,5 +1,13 @@
+import logging
+
 import uvicorn
 from fastapi import FastAPI
+
+# from src.config import settings
+
+
+logging.basicConfig(level=logging.INFO)
+
 
 app = FastAPI()
 
