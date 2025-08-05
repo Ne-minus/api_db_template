@@ -3,7 +3,6 @@ from typing_extensions import Any
 
 from src.services.DBService import create_employee
 
-
 router = APIRouter()
 
 

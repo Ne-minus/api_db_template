@@ -11,7 +11,7 @@ async def create_employee(data: dict):
     db_employee = Employee(**data)
     async with AsyncSessionLocal() as session:
         session.add(db_employee)
-        await session.commit() # фиксируем состояние базы, сохраняем изменения
-        await session.refresh(db_employee) # обновляем db_employee
-        await session.close() # закрываем сессию
+        await session.commit()  # фиксируем состояние базы, сохраняем изменения
+        await session.refresh(db_employee)  # обновляем db_employee
+        await session.close()  # закрываем сессию
         return db_employee
