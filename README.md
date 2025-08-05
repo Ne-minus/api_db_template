@@ -7,6 +7,9 @@ pydantic-settings
 SQLAlchemy
 alembic
 
+# pre-commit hooks
+https://pre-commit.com/
+
 # 1. Docker
 
 Делаем приложение в двух контейнерах:
