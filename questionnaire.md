@@ -12,5 +12,6 @@ os.environ["POSTGRES_URL"] -> actual path
 **2.** Что такое ```orm_mode=True``` в pydantic?
 
 **Ответ:** Флаг, чтобы мы могли вернуть в хэндлере ORM объект: разрешает методу from_orm() брать данные из произвольных атрибутов объекта, а не только из ключей словаря --> когда FastAPI дергает этот метод (автоматом), то мы не упадем с ошибкой.
+
 **По умному:**
 Pydantic can read attributes from an object instance to populate its fields, rather than expecting a dictionary-like structure. This is particularly useful when working with ORM objects, as they typically expose data as instance attributes.
