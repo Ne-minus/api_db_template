@@ -23,7 +23,7 @@ async def create_employee(data: dict):
         return db_employee
 
 
-async def get_employee_by_name(name: dict) -> Optional[Employee]:
+async def get_employee_by_name(name: str) -> Optional[Employee]:
     async with AsyncSessionLocal() as session:
         result = await session.execute(
             select(Employee).where(Employee.name == name).limit(1)
@@ -37,8 +37,8 @@ async def list_employees() -> List[Employee]:
         return result.scalars().all()
 
 
-async def delete_employee(name: str):
+async def delete_employee(id: int):
     async with AsyncSessionLocal() as session:
-        result = await session.execute(delete(Employee).where(Employee.name == name))
+        result = await session.execute(delete(Employee).where(Employee.id == id))
         await session.commit()
         return result.rowcount

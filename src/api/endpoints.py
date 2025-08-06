@@ -24,9 +24,9 @@ async def get_employee_ep(name: str):
     return emp
 
 
-@router.delete("/employee/{name}", status_code=204)
-async def delete_employee_ep(name: str):
-    rows = await delete_employee(name)
+@router.delete("/employee/{id}", status_code=204)
+async def delete_employee_ep(id: int):
+    rows = await delete_employee(id)
     if not rows:
         raise HTTPException(status_code=404, detail="Not found")
     return Response(status_code=204)
