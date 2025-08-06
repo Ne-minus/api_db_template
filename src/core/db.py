@@ -10,7 +10,7 @@ load_dotenv()
 
 Base = declarative_base()
 
-engine = create_async_engine(os.environ["POSTGRES_URL"])
+engine = create_async_engine(os.getenv("POSTGRES_URL"))
 
 async_session = AsyncSession(engine)
 

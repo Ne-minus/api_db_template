@@ -12,5 +12,7 @@ class EmployeeCreate(BaseModel):
 class EmployeeRead(EmployeeCreate):
     id: int
 
+    # чтобы мы могли вернуть в хэндлере ORM объект: разрешает методу from_orm() брать данные из произвольных атрибутов
+    # объекта, а не только из ключей словаря -> когда FastAPI дергает этот метод (автоматом), то мы не упадем с ошибкой.
     class Config:
         orm_mode = True
